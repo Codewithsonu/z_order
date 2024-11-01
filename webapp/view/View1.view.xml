@@ -1,37 +1,93 @@
 <mvc:View controllerName="com.sap.zorder1.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="Order Summany"  titleAlignment="Center">
+    <Page id="page" title="Order Summany" titleAlignment="Center">
 
         <content>
 
-            <SplitContainer initialMaster="master" initialDetail="OrderDetail">
+            <SplitContainer id="_IDGenSplitContainer1" initialMaster="master" initialDetail="OrderDetail">
 
-                <detailPages id="OrderDetail"> 
-                
-                
+                <detailPages>
+
+                    <Page id="OrderDetail" title="Order Details" titleAlignment="Center" >
+
+                        <Table id="OrderTable" items="{/Order_Details}">
+
+                            <columns>
+
+                                <Column >
+
+                                    <Text text="Order ID "></Text>
+
+                                </Column>
+                                <Column >
+
+                                    <Text text="ProductID"></Text>
+
+                                </Column>
+                                <Column >
+
+                                    <Text text="UnitPrice"></Text>
+
+                                </Column>
+                                <Column >
+
+                                    <Text text="Quantity"></Text>
+
+                                </Column>
+                                <Column >
+
+                                    <Text text="Discount"></Text>
+
+                                </Column>
+
+
+                            </columns>
+                            <items>
+
+                            <ColumnListItem >
+
+                                <cells>
+                                    <Text text="{OrderID}" />
+                                       <Text text="{ProductID}" />
+                                           <Text text="{UnitPrice}" />
+                                               <Text text="{Quantity}" />
+                                                   <Text text="{Discount}" />
+                                
+                                </cells>
+                            
+                            
+                            </ColumnListItem>
+
+                            </items>
+
+                        </Table>
+
+                    </Page>
+
+
                 </detailPages>
 
                 <masterPages>
 
-                    <Page id="master" title="Order Master">
+                    <Page id="master" title="Order Master" titleAlignment="Center" >
 
                         <List id="OrderList" items="{/Orders}" itemPress="onOrdersListItemPress">
-                        
+
                             <items>
-                                <StandardListItem title="{OrderID}" type="Navigation" ></StandardListItem>
-                            
-                            
+                                <StandardListItem id="_IDGenStandardListItem" title="{OrderID}" type="Navigation"></StandardListItem>
+
+
                             </items>
                         </List>
 
                     </Page>
-                
+
                 </masterPages>
 
             </SplitContainer>
 
         </content>
-      
-</Page>
+
+    </Page>
 </mvc:View>
