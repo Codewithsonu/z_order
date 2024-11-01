@@ -1,7 +1,37 @@
 <mvc:View controllerName="com.sap.zorder1.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
-    </Page>
+    <Page id="page" title="Order Summany"  titleAlignment="Center">
+
+        <content>
+
+            <SplitContainer initialMaster="master" initialDetail="OrderDetail">
+
+                <detailPages id="OrderDetail"> 
+                
+                
+                </detailPages>
+
+                <masterPages>
+
+                    <Page id="master" title="Order Master">
+
+                        <List id="OrderList" items="{/Orders}" itemPress="onOrdersListItemPress">
+                        
+                            <items>
+                                <StandardListItem title="{OrderID}" type="Navigation" ></StandardListItem>
+                            
+                            
+                            </items>
+                        </List>
+
+                    </Page>
+                
+                </masterPages>
+
+            </SplitContainer>
+
+        </content>
+      
+</Page>
 </mvc:View>

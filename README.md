@@ -39,4 +39,7 @@ An SAP Fiori application.
 
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
+##### Path 
+https://sapui5.hana.ondemand.com/resources/sap-ui-core.js
+
 
